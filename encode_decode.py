@@ -27,10 +27,14 @@ def encode():
 
 def decode():
     # prints out encoded pw and decoded pw
-    pass
-    # print(
-    #     f'The encoded password is {encoded_pw}, and the original password is {og_password}')
-    # return
+    newlist = []
+    for l in encoded_pw:
+        if int(l) < 3:
+            newlist.append(str(int(l) + 7))
+        else:
+            newlist.append(str(int(l) - 3))
+    decoded_pw = ''.join(newlist)
+    print(f'The encoded password is {encoded_pw}, and the original password is {decoded_pw}.')
 
 
 def exit():
